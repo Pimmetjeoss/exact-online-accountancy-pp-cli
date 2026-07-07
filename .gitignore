@@ -1,0 +1,31 @@
+# Build outputs / local binaries
+/exact-online-accountancy-pp-cli
+/exact-online-accountancy-pp-mcp
+/build/stage/
+/build/bin/
+/build/dist/
+
+# Keep packaged MCP bundle(s) generated for agent distribution
+!/build/*.mcpb
+
+# Local caches and temp files
+/.cache/
+/tmp/
+*.tmp
+*.log
+
+# OS/editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Secrets / local auth
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*token*
+*secret*
+*credential*

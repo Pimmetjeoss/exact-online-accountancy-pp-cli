@@ -1,0 +1,51 @@
+version: 2
+project_name: exact-online-accountancy-pp-cli
+changelog:
+  disable: true
+builds:
+  - id: exact-online-accountancy-pp-cli
+    main: ./cmd/exact-online-accountancy-pp-cli
+    binary: exact-online-accountancy-pp-cli
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X exact-online-accountancy-pp-cli/internal/cli.version={{ .Version }}
+    targets:
+      - darwin_amd64
+      - darwin_arm64
+      - linux_amd64
+      - linux_arm64
+      - windows_amd64
+      - windows_arm64
+  - id: exact-online-accountancy-pp-mcp
+    main: ./cmd/exact-online-accountancy-pp-mcp
+    binary: exact-online-accountancy-pp-mcp
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+    targets:
+      - darwin_amd64
+      - darwin_arm64
+      - linux_amd64
+      - linux_arm64
+      - windows_amd64
+      - windows_arm64
+archives:
+  - formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+checksum:
+  name_template: checksums.txt
+brews:
+  - name: exact-online-accountancy-pp-cli
+    repository:
+      owner: pimmetjeoss
+      name: homebrew-tap
+    homepage: "https://github.com/pimmetjeoss/exact-online-accountancy-pp-cli"
+    description: "Accountancy-only Exact Online REST/OData API surface generated from the official Exact Online REST API..."
+    install: |
+      bin.install "exact-online-accountancy-pp-cli"
+      bin.install "exact-online-accountancy-pp-mcp"

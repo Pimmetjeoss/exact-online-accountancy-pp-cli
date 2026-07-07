@@ -1,0 +1,39 @@
+{
+  "manifest_version": "0.3",
+  "name": "exact-online-accountancy-pp-mcp",
+  "display_name": "Exact Online Accountancy",
+  "version": "4.5.2",
+  "description": "Exact Online Accountancy API surface as MCP tools.",
+  "author": {
+    "name": "CLI Printing Press"
+  },
+  "license": "Apache-2.0",
+  "server": {
+    "type": "binary",
+    "entry_point": "bin/exact-online-accountancy-pp-mcp",
+    "mcp_config": {
+      "command": "${__dirname}/bin/exact-online-accountancy-pp-mcp",
+      "args": [],
+      "env": {
+        "EXACT_ONLINE_ACCOUNTANCY_OAUTH2": "${user_config.exact_online_accountancy_oauth2}"
+      }
+    }
+  },
+  "user_config": {
+    "exact_online_accountancy_oauth2": {
+      "type": "string",
+      "title": "EXACT_ONLINE_ACCOUNTANCY_OAUTH2",
+      "description": "Sets EXACT_ONLINE_ACCOUNTANCY_OAUTH2 for the Exact Online Accountancy MCP server.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=1.0.0",
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ]
+  }
+}

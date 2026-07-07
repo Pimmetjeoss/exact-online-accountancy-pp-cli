@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-07T11:25:04.821255675Z",
+  "printing_press_version": "4.5.2",
+  "api_name": "exact-online-accountancy",
+  "display_name": "Exact Online Accountancy",
+  "cli_name": "exact-online-accountancy-pp-cli",
+  "owner": "pimmetjeoss",
+  "printer": "Pimmetjeoss",
+  "printer_name": "Pimmetjeoss",
+  "spec_url": "https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10",
+  "spec_path": "exact-online-accountancy-openapi.yaml",
+  "spec_format": "openapi3",
+  "spec_checksum": "sha256:700dca9b1fb8b67ca664b37e2f552626338ed8fa7c341c246879df861403fd5e",
+  "mcp_binary": "exact-online-accountancy-pp-mcp",
+  "mcp_tool_count": 26,
+  "mcp_ready": "full",
+  "api_version": "1.0.0",
+  "auth_type": "bearer_token",
+  "auth_env_vars": [
+    "EXACT_ONLINE_ACCOUNTANCY_OAUTH2"
+  ]
+}

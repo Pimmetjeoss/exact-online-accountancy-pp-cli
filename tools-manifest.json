@@ -1,0 +1,416 @@
+{
+  "api_name": "exact-online-accountancy",
+  "base_url": "https://start.exactonline.nl",
+  "description": "Accountancy-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation. Covers the Accountancy service resources and all documented methods. OAuth bearer token required.",
+  "mcp_ready": "full",
+  "http_transport": "standard",
+  "auth": {
+    "type": "bearer_token",
+    "header": "Authorization",
+    "env_vars": [
+      "EXACT_ONLINE_ACCOUNTANCY_OAUTH2"
+    ],
+    "env_var_specs": [
+      {
+        "name": "EXACT_ONLINE_ACCOUNTANCY_OAUTH2",
+        "kind": "per_call",
+        "required": true,
+        "sensitive": true,
+        "inferred": true
+      }
+    ]
+  },
+  "required_headers": [],
+  "tools": [
+    {
+      "name": "accountancy_account-involved-accounts-delete",
+      "description": "This resource will show all accounts which are involved for a specific account and will also show the type of the relation between the accounts. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyAccountInvolvedAccountsDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/AccountInvolvedAccounts",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-involved-accounts-get",
+      "description": "This resource will show all accounts which are involved for a specific account and will also show the type of the relation between the accounts. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyAccountInvolvedAccountsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/AccountInvolvedAccounts",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-involved-accounts-post",
+      "description": "This resource will show all accounts which are involved for a specific account and will also show the type of the relation between the accounts. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancyAccountInvolvedAccountsPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/AccountInvolvedAccounts",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-involved-accounts-put",
+      "description": "This resource will show all accounts which are involved for a specific account and will also show the type of the relation between the accounts. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancyAccountInvolvedAccountsPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/AccountInvolvedAccounts",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-owners-delete",
+      "description": "The account owners are accounts which represents the owners or shareholders for a specific account. In this resource also the percentage of shares which the account holds are stored. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyAccountOwnersDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/AccountOwners",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-owners-get",
+      "description": "The account owners are accounts which represents the owners or shareholders for a specific account. In this resource also the percentage of shares which the account holds are stored. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyAccountOwnersGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/AccountOwners",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-owners-post",
+      "description": "The account owners are accounts which represents the owners or shareholders for a specific account. In this resource also the percentage of shares which the account holds are stored. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancyAccountOwnersPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/AccountOwners",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_account-owners-put",
+      "description": "The account owners are accounts which represents the owners or shareholders for a specific account. In this resource also the percentage of shares which the account holds are stored. This functionality is only available in a practice management company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancyAccountOwnersPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/AccountOwners",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_client-groups-get",
+      "description": "The client groups are used to classify the clients. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyClientGroups Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyClientGroupsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/ClientGroups",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_client-main-groups-get",
+      "description": "The client main groups are used to classify the client groups. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyClientMainGroups Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyClientMainGroupsGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/ClientMainGroups",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-user-roles-delete",
+      "description": "An involved user role represents a role which a user can have in an accountancy firm. This involved user role can be used to indicate the role that a user have for a certain client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyInvolvedUserRolesDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/InvolvedUserRoles",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-user-roles-get",
+      "description": "An involved user role represents a role which a user can have in an accountancy firm. This involved user role can be used to indicate the role that a user have for a certain client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyInvolvedUserRolesGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/InvolvedUserRoles",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-user-roles-post",
+      "description": "An involved user role represents a role which a user can have in an accountancy firm. This involved user role can be used to indicate the role that a user have for a certain client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancyInvolvedUserRolesPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/InvolvedUserRoles",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-user-roles-put",
+      "description": "An involved user role represents a role which a user can have in an accountancy firm. This involved user role can be used to indicate the role that a user have for a certain client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancyInvolvedUserRolesPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/InvolvedUserRoles",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-users-delete",
+      "description": "The involved users keeps track on all users which are involved for a certain client of the accountant. The involved user also shows the role that the user has for the involved client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyInvolvedUsersDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/InvolvedUsers",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-users-get",
+      "description": "The involved users keeps track on all users which are involved for a certain client of the accountant. The involved user also shows the role that the user has for the involved client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyInvolvedUsersGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/InvolvedUsers",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-users-post",
+      "description": "The involved users keeps track on all users which are involved for a certain client of the accountant. The involved user also shows the role that the user has for the involved client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancyInvolvedUsersPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/InvolvedUsers",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_involved-users-put",
+      "description": "The involved users keeps track on all users which are involved for a certain client of the accountant. The involved user also shows the role that the user has for the involved client. This functionality is only available in a practice company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancyInvolvedUsersPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/InvolvedUsers",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_solution-links-delete",
+      "description": "Solution links are used to store which bookkeeping solution is used for a certain account. This can be the bookkeeping solution of Exact Online which is mentioned as ‘internal’ or a bookkeeping solution of another vender which is mentioned as ‘external’. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks Scope: Accountancy practicemanagement. Required: division. Returns the AccountancySolutionLinksDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/SolutionLinks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_solution-links-get",
+      "description": "Solution links are used to store which bookkeeping solution is used for a certain account. This can be the bookkeeping solution of Exact Online which is mentioned as ‘internal’ or a bookkeeping solution of another vender which is mentioned as ‘external’. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks Scope: Accountancy practicemanagement. Required: division. Returns the AccountancySolutionLinksGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/SolutionLinks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_solution-links-post",
+      "description": "Solution links are used to store which bookkeeping solution is used for a certain account. This can be the bookkeeping solution of Exact Online which is mentioned as ‘internal’ or a bookkeeping solution of another vender which is mentioned as ‘external’. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancySolutionLinksPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/SolutionLinks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_solution-links-put",
+      "description": "Solution links are used to store which bookkeeping solution is used for a certain account. This can be the bookkeeping solution of Exact Online which is mentioned as ‘internal’ or a bookkeeping solution of another vender which is mentioned as ‘external’. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancySolutionLinksPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/SolutionLinks",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_task-types-delete",
+      "description": "The task types are specific types defined by the user of the accountancy firm.This resource shows the custom types defined within a company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyTaskTypesDeleteResponse. Destructive.",
+      "method": "DELETE",
+      "path": "/api/v1/{division}/accountancy/TaskTypes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_task-types-get",
+      "description": "The task types are specific types defined by the user of the accountancy firm.This resource shows the custom types defined within a company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes Scope: Accountancy practicemanagement. Required: division. Returns the AccountancyTaskTypesGetResponse.",
+      "method": "GET",
+      "path": "/api/v1/{division}/accountancy/TaskTypes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_task-types-post",
+      "description": "The task types are specific types defined by the user of the accountancy firm.This resource shows the custom types defined within a company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes Scope: Accountancy practicemanagement. Required: division. Returns the new AccountancyTaskTypesPostResponse.",
+      "method": "POST",
+      "path": "/api/v1/{division}/accountancy/TaskTypes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "accountancy_task-types-put",
+      "description": "The task types are specific types defined by the user of the accountancy firm.This resource shows the custom types defined within a company. Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes Scope: Accountancy practicemanagement. Required: division. Returns the updated AccountancyTaskTypesPutResponse.",
+      "method": "PUT",
+      "path": "/api/v1/{division}/accountancy/TaskTypes",
+      "params": [
+        {
+          "name": "division",
+          "type": "int",
+          "location": "path",
+          "description": "Exact Online division code.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}
