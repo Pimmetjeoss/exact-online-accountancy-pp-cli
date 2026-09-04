@@ -10,6 +10,26 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func init() {
+	registerNovelCommand(func(root *cobra.Command, flags *rootFlags) {
+		var parent *cobra.Command
+		for _, sub := range root.Commands() {
+			if sub.Name() == "accountancy" {
+				parent = sub
+				break
+			}
+		}
+		if parent == nil {
+			return
+		}
+		addNovelCommandIfAbsent(parent, newAccountancyResourcesCmd(flags))
+		addNovelCommandIfAbsent(parent, newAccountancyDocsCmd(flags))
+		addNovelCommandIfAbsent(parent, newAccountancyPracticeSetupCmd(flags))
+		addNovelCommandIfAbsent(parent, newAccountancyClientSnapshotCmd(flags))
+		addNovelCommandIfAbsent(parent, newAccountancyOwnershipMapCmd(flags))
+	})
+}
+
 type accountancyODataFlags struct {
 	filter       string
 	selectClause string
@@ -89,6 +109,7 @@ func accountancyResourceByName(name string) (accountancyResourceInfo, bool) {
 	return accountancyResourceInfo{}, false
 }
 
+// pp:data-source local
 func newAccountancyResourcesCmd(flags *rootFlags) *cobra.Command {
 	var method string
 	cmd := &cobra.Command{
@@ -118,6 +139,7 @@ func newAccountancyResourcesCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+// pp:data-source local
 func newAccountancyDocsCmd(flags *rootFlags) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:         "docs <resource>",
@@ -139,6 +161,7 @@ func newAccountancyDocsCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+// pp:data-source live
 func newAccountancyPracticeSetupCmd(flags *rootFlags) *cobra.Command {
 	var q accountancyODataFlags
 	cmd := &cobra.Command{
@@ -157,6 +180,7 @@ func newAccountancyPracticeSetupCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+// pp:data-source live
 func newAccountancyClientSnapshotCmd(flags *rootFlags) *cobra.Command {
 	var accountID string
 	var q accountancyODataFlags
@@ -181,6 +205,7 @@ func newAccountancyClientSnapshotCmd(flags *rootFlags) *cobra.Command {
 	return cmd
 }
 
+// pp:data-source live
 func newAccountancyOwnershipMapCmd(flags *rootFlags) *cobra.Command {
 	var accountID string
 	var q accountancyODataFlags

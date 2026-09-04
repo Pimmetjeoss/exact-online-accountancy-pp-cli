@@ -34,6 +34,13 @@
       "reason": "Polish flagged BindMCPClient (called from internal/mcp/tools.go:616), the 5 newAccountancy*Cmd novel-command constructors from recorded patch accountancy-odata-and-workflows (unwired but intentional workflow surface), and hook infrastructure registerNovelCommand/addNovelCommandIfAbsent/registerClientHook/registerPlatformSource (init-based extension points, zero callers by design). Proof: polish apply broke the build (undefined: cli.BindMCPClient) and auto-restored all 13; tree verified byte-identical via diff, go build + go test ./... re-passed.",
       "files": [],
       "validated_outcome": "polish apply removed 0 functions (all restored); go build exit 0; go test ./... all packages ok."
+    },
+    {
+      "id": "wire-novel-workflows-2026-09-04",
+      "summary": "Wired the 5 orphaned hand-written workflow commands (resources, docs, practice-setup, client-snapshot, ownership-map) into the accountancy parent via novel-command hook init() plus pp:data-source annotations (resources/docs local, setup/snapshot/ownership live). Same pattern as Activities fix.",
+      "reason": "Dogfood WARN '5 unwired novel commands' was a true positive: constructors existed but were unreachable from the CLI. Previous patch note wrongly called them intentional-unwired.",
+      "files": ["internal/cli/accountancy_workflows.go"],
+      "validated_outcome": "go build + go vet exit 0, go test all ok, accountancy --help lists all 5 workflow commands."
     }
   ]
 }
