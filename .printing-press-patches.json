@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "applied_at": "2026-07-07",
+  "base_printing_press_version": "4.5.2",
+  "patches": [
+    {
+      "id": "accountancy-odata-and-workflows",
+      "summary": "Added Accountancy OData query flags to generated GET commands plus resource/docs/practice/client workflow commands.",
+      "reason": "Exact Online Accountancy uses OData filters/select/top in day-to-day use, and the user requested out-of-the-box workflow commands in addition to full endpoint coverage.",
+      "files": [
+        "internal/cli/accountancy.go",
+        "internal/cli/accountancy_workflows.go",
+        "internal/cli/accountancy_account-involved-accounts-get.go",
+        "internal/cli/accountancy_account-owners-get.go",
+        "internal/cli/accountancy_client-groups-get.go",
+        "internal/cli/accountancy_client-main-groups-get.go",
+        "internal/cli/accountancy_involved-user-roles-get.go",
+        "internal/cli/accountancy_involved-users-get.go",
+        "internal/cli/accountancy_solution-links-get.go",
+        "internal/cli/accountancy_task-types-get.go"
+      ],
+      "validated_outcome": "go test ./... passed; --help, resources --json, docs --json and dry-run OData URL construction verified."
+    },
+    {
+      "id": "dead-helper-cleanup",
+      "summary": "Removed generated unused pagination/display helpers while preserving printJSONFiltered used by framework commands.",
+      "reason": "printing-press dogfood reported dead helper warnings after generation/polish; removing the unused helpers makes dogfood's dead-code gate pass for this accountancy-only CLI.",
+      "files": ["internal/cli/helpers.go"],
+      "validated_outcome": "go test ./... passed; printing-press dogfood reports Dead Functions: 0 dead (PASS)."
+    },
+    {
+      "id": "polish-stap-b-hold",
+      "summary": "STAP-B polish --remove-dead-code evaluated and HELD: all 13 flagged functions are false positives, nothing removed.",
+      "reason": "Polish flagged BindMCPClient (called from internal/mcp/tools.go:616), the 5 newAccountancy*Cmd novel-command constructors from recorded patch accountancy-odata-and-workflows (unwired but intentional workflow surface), and hook infrastructure registerNovelCommand/addNovelCommandIfAbsent/registerClientHook/registerPlatformSource (init-based extension points, zero callers by design). Proof: polish apply broke the build (undefined: cli.BindMCPClient) and auto-restored all 13; tree verified byte-identical via diff, go build + go test ./... re-passed.",
+      "files": [],
+      "validated_outcome": "polish apply removed 0 functions (all restored); go build exit 0; go test ./... all packages ok."
+    }
+  ]
+}

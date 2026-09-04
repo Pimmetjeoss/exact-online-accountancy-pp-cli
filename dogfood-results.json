@@ -1,0 +1,118 @@
+{
+  "dir": "\u003ccli-dir\u003e/exact-online-accountancy-pp-cli",
+  "spec_path": "\u003ccli-dir\u003e/spec.yaml",
+  "spec_source": "bundled",
+  "verdict": "WARN",
+  "path_check": {
+    "tested": 9,
+    "valid": 9,
+    "valid_pct": 100
+  },
+  "auth_check": {
+    "spec_scheme": "bearer token format (expects \"Bearer \" prefix)",
+    "generated_format": "Bearer ",
+    "match": true,
+    "detail": "spec and generated client both use \"Bearer\""
+  },
+  "browser_session_check": {
+    "required": false,
+    "pass": true,
+    "detail": "browser-session auth not required"
+  },
+  "oauth_scope_coverage_check": {
+    "checked": 26,
+    "covered": 26,
+    "detail": "all OAuth-scoped endpoints covered by generated auth scopes"
+  },
+  "dead_flags": {
+    "total": 25,
+    "dead": 0
+  },
+  "dead_functions": {
+    "total": 82,
+    "dead": 6,
+    "items": [
+      "collectionItemsForOutput",
+      "hasChangedLocalFlags",
+      "isDryRunResponseForClient",
+      "paginatedGetWithResponsePath",
+      "rawAtPath",
+      "responsePayloadAtPath"
+    ]
+  },
+  "pipeline_check": {
+    "sync_calls_domain": false,
+    "search_calls_domain": false,
+    "domain_tables": 4,
+    "sync_file_emitted": false,
+    "sync_resources_present": false,
+    "detail": "sync Upsert calls not found; search methods not found; 4 domain tables found"
+  },
+  "example_check": {
+    "tested": 10,
+    "with_examples": 9,
+    "valid_examples": 9,
+    "missing": [
+      "login"
+    ],
+    "detail": "9/10 commands have examples"
+  },
+  "wiring_check": {
+    "command_tree": {
+      "defined": 76,
+      "registered": 71,
+      "unregistered": [
+        "client-snapshot",
+        "docs",
+        "ownership-map",
+        "practice-setup",
+        "resources"
+      ]
+    },
+    "config_consistency": {
+      "consistent": true
+    },
+    "workflow_completeness": {
+      "skipped": true,
+      "total_steps": 0,
+      "mapped_steps": 0,
+      "detail": "no workflow_verify.yaml found"
+    }
+  },
+  "novel_features_check": {
+    "planned": 0,
+    "found": 0,
+    "skipped": true
+  },
+  "mcp_surface_parity": {
+    "state": "runtime_walking",
+    "pass": true,
+    "detail": "MCP surface mirrors the Cobra tree at runtime"
+  },
+  "reimplementation_check": {
+    "checked": 0,
+    "exempted_via_store": 0,
+    "skipped": true
+  },
+  "source_client_check": {
+    "checked": 9
+  },
+  "print_json_filtered_check": {
+    "checked": 45
+  },
+  "test_presence": {
+    "checked": 2
+  },
+  "naming_check": {
+    "checked": 45
+  },
+  "sync_param_drop_check": {
+    "checked": 0,
+    "skipped": true
+  },
+  "issues": [
+    "6 dead helper functions found",
+    "sync uses generic Upsert only",
+    "5 unregistered commands: client-snapshot, docs, ownership-map, practice-setup, resources"
+  ]
+}

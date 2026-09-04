@@ -1,0 +1,8 @@
+{
+  "dir": "\u003ccli-dir\u003e/exact-online-accountancy-pp-cli",
+  "verdict": "pass",
+  "actors": null,
+  "issues": [
+    "no Apify actor references found, skipping"
+  ]
+}

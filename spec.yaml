@@ -1,0 +1,1975 @@
+openapi: 3.0.3
+info:
+  title: Exact Online Accountancy API
+  version: 1.0.0
+  description: Accountancy-only Exact Online REST/OData API surface generated from
+    the official Exact Online REST API documentation. Covers the Accountancy service
+    resources and all documented methods. OAuth bearer token required.
+servers:
+- url: https://start.exactonline.nl
+  description: Exact Online Netherlands (start.exactonline.nl)
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://start.exactonline.nl/api/oauth2/auth
+          tokenUrl: https://start.exactonline.nl/api/oauth2/token
+          scopes:
+            accountancy: Accountancy practicemanagement
+  schemas:
+    AccountancyAccountInvolvedAccounts:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyAccountOwners:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyClientGroups:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyClientMainGroups:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyInvolvedUserRoles:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyInvolvedUsers:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancySolutionLinks:
+      type: object
+      additionalProperties: true
+      properties: {}
+    AccountancyTaskTypes:
+      type: object
+      additionalProperties: true
+      properties: {}
+security:
+- oauth2:
+  - accountancy
+paths:
+  /api/v1/{division}/accountancy/AccountInvolvedAccounts:
+    get:
+      operationId: AccountInvolvedAccounts_get
+      summary: GET AccountInvolvedAccounts
+      description: 'This resource will show all accounts which are involved for a
+        specific account and will also show the type of the relation between the accounts.
+        This functionality is only available in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountInvolvedAccounts
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: &id001
+          type: integer
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: &id002
+          type: string
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: &id003
+          type: string
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: &id004
+          type: string
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: &id005
+          type: integer
+          minimum: 1
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: &id006
+          type: string
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: &id007
+          type: string
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: AccountInvolvedAccounts_post
+      summary: POST AccountInvolvedAccounts
+      description: 'This resource will show all accounts which are involved for a
+        specific account and will also show the type of the relation between the accounts.
+        This functionality is only available in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountInvolvedAccounts
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyAccountInvolvedAccounts'
+    put:
+      operationId: AccountInvolvedAccounts_put
+      summary: PUT AccountInvolvedAccounts
+      description: 'This resource will show all accounts which are involved for a
+        specific account and will also show the type of the relation between the accounts.
+        This functionality is only available in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountInvolvedAccounts
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyAccountInvolvedAccounts'
+    delete:
+      operationId: AccountInvolvedAccounts_delete
+      summary: DELETE AccountInvolvedAccounts
+      description: 'This resource will show all accounts which are involved for a
+        specific account and will also show the type of the relation between the accounts.
+        This functionality is only available in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountInvolvedAccounts
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /api/v1/{division}/accountancy/AccountOwners:
+    get:
+      operationId: AccountOwners_get
+      summary: GET AccountOwners
+      description: 'The account owners are accounts which represents the owners or
+        shareholders for a specific account. In this resource also the percentage
+        of shares which the account holds are stored. This functionality is only available
+        in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountOwners
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: AccountOwners_post
+      summary: POST AccountOwners
+      description: 'The account owners are accounts which represents the owners or
+        shareholders for a specific account. In this resource also the percentage
+        of shares which the account holds are stored. This functionality is only available
+        in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountOwners
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyAccountOwners'
+    put:
+      operationId: AccountOwners_put
+      summary: PUT AccountOwners
+      description: 'The account owners are accounts which represents the owners or
+        shareholders for a specific account. In this resource also the percentage
+        of shares which the account holds are stored. This functionality is only available
+        in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountOwners
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyAccountOwners'
+    delete:
+      operationId: AccountOwners_delete
+      summary: DELETE AccountOwners
+      description: 'The account owners are accounts which represents the owners or
+        shareholders for a specific account. In this resource also the percentage
+        of shares which the account holds are stored. This functionality is only available
+        in a practice management company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountOwners
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - AccountOwners
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /api/v1/{division}/accountancy/ClientGroups:
+    get:
+      operationId: ClientGroups_get
+      summary: GET ClientGroups
+      description: 'The client groups are used to classify the clients.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyClientGroups
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - ClientGroups
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+  /api/v1/{division}/accountancy/ClientMainGroups:
+    get:
+      operationId: ClientMainGroups_get
+      summary: GET ClientMainGroups
+      description: 'The client main groups are used to classify the client groups.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyClientMainGroups
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - ClientMainGroups
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+  /api/v1/{division}/accountancy/InvolvedUserRoles:
+    get:
+      operationId: InvolvedUserRoles_get
+      summary: GET InvolvedUserRoles
+      description: 'An involved user role represents a role which a user can have
+        in an accountancy firm. This involved user role can be used to indicate the
+        role that a user have for a certain client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUserRoles
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: InvolvedUserRoles_post
+      summary: POST InvolvedUserRoles
+      description: 'An involved user role represents a role which a user can have
+        in an accountancy firm. This involved user role can be used to indicate the
+        role that a user have for a certain client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUserRoles
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyInvolvedUserRoles'
+    put:
+      operationId: InvolvedUserRoles_put
+      summary: PUT InvolvedUserRoles
+      description: 'An involved user role represents a role which a user can have
+        in an accountancy firm. This involved user role can be used to indicate the
+        role that a user have for a certain client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUserRoles
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyInvolvedUserRoles'
+    delete:
+      operationId: InvolvedUserRoles_delete
+      summary: DELETE InvolvedUserRoles
+      description: 'An involved user role represents a role which a user can have
+        in an accountancy firm. This involved user role can be used to indicate the
+        role that a user have for a certain client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUserRoles
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUserRoles
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /api/v1/{division}/accountancy/InvolvedUsers:
+    get:
+      operationId: InvolvedUsers_get
+      summary: GET InvolvedUsers
+      description: 'The involved users keeps track on all users which are involved
+        for a certain client of the accountant. The involved user also shows the role
+        that the user has for the involved client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUsers
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: InvolvedUsers_post
+      summary: POST InvolvedUsers
+      description: 'The involved users keeps track on all users which are involved
+        for a certain client of the accountant. The involved user also shows the role
+        that the user has for the involved client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUsers
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyInvolvedUsers'
+    put:
+      operationId: InvolvedUsers_put
+      summary: PUT InvolvedUsers
+      description: 'The involved users keeps track on all users which are involved
+        for a certain client of the accountant. The involved user also shows the role
+        that the user has for the involved client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUsers
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyInvolvedUsers'
+    delete:
+      operationId: InvolvedUsers_delete
+      summary: DELETE InvolvedUsers
+      description: 'The involved users keeps track on all users which are involved
+        for a certain client of the accountant. The involved user also shows the role
+        that the user has for the involved client. This functionality is only available
+        in a practice company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - InvolvedUsers
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /api/v1/{division}/accountancy/SolutionLinks:
+    get:
+      operationId: SolutionLinks_get
+      summary: GET SolutionLinks
+      description: 'Solution links are used to store which bookkeeping solution is
+        used for a certain account. This can be the bookkeeping solution of Exact
+        Online which is mentioned as ‘internal’ or a bookkeeping solution of another
+        vender which is mentioned as ‘external’.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - SolutionLinks
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: SolutionLinks_post
+      summary: POST SolutionLinks
+      description: 'Solution links are used to store which bookkeeping solution is
+        used for a certain account. This can be the bookkeeping solution of Exact
+        Online which is mentioned as ‘internal’ or a bookkeeping solution of another
+        vender which is mentioned as ‘external’.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - SolutionLinks
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancySolutionLinks'
+    put:
+      operationId: SolutionLinks_put
+      summary: PUT SolutionLinks
+      description: 'Solution links are used to store which bookkeeping solution is
+        used for a certain account. This can be the bookkeeping solution of Exact
+        Online which is mentioned as ‘internal’ or a bookkeeping solution of another
+        vender which is mentioned as ‘external’.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - SolutionLinks
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancySolutionLinks'
+    delete:
+      operationId: SolutionLinks_delete
+      summary: DELETE SolutionLinks
+      description: 'Solution links are used to store which bookkeeping solution is
+        used for a certain account. This can be the bookkeeping solution of Exact
+        Online which is mentioned as ‘internal’ or a bookkeeping solution of another
+        vender which is mentioned as ‘external’.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - SolutionLinks
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+  /api/v1/{division}/accountancy/TaskTypes:
+    get:
+      operationId: TaskTypes_get
+      summary: GET TaskTypes
+      description: 'The task types are specific types defined by the user of the accountancy
+        firm.This resource shows the custom types defined within a company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - TaskTypes
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+    post:
+      operationId: TaskTypes_post
+      summary: POST TaskTypes
+      description: 'The task types are specific types defined by the user of the accountancy
+        firm.This resource shows the custom types defined within a company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - TaskTypes
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyTaskTypes'
+    put:
+      operationId: TaskTypes_put
+      summary: PUT TaskTypes
+      description: 'The task types are specific types defined by the user of the accountancy
+        firm.This resource shows the custom types defined within a company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - TaskTypes
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountancyTaskTypes'
+    delete:
+      operationId: TaskTypes_delete
+      summary: DELETE TaskTypes
+      description: 'The task types are specific types defined by the user of the accountancy
+        firm.This resource shows the custom types defined within a company.
+
+
+        Official docs: https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes
+
+        Scope: Accountancy practicemanagement'
+      tags:
+      - Accountancy
+      - TaskTypes
+      parameters:
+      - name: division
+        in: path
+        required: true
+        description: Exact Online division code.
+        schema: *id001
+      - name: $select
+        in: query
+        required: false
+        description: OData select clause, comma-separated field names.
+        schema: *id002
+      - name: $filter
+        in: query
+        required: false
+        description: OData filter expression.
+        schema: *id003
+      - name: $orderby
+        in: query
+        required: false
+        description: OData order by expression.
+        schema: *id004
+      - name: $top
+        in: query
+        required: false
+        description: Maximum number of rows.
+        schema: *id005
+      - name: $skiptoken
+        in: query
+        required: false
+        description: Exact/OData continuation token for paging.
+        schema: *id006
+      - name: $expand
+        in: query
+        required: false
+        description: OData expand clause.
+        schema: *id007
+      responses:
+        '200':
+          description: Exact Online response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '204':
+          description: No content
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '429':
+          description: Rate limited
+      requestBody:
+        required: false
+        description: Exact Online delete request body/key payload when required by
+          this resource.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true

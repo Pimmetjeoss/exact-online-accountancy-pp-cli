@@ -1,0 +1,46 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-09-03T19:55:11.901992472Z",
+  "printing_press_version": "4.31.1",
+  "api_name": "exact-online-accountancy",
+  "display_name": "Exact Online Accountancy",
+  "cli_name": "exact-online-accountancy-pp-cli",
+  "creator": {
+    "name": "Pimmetjeoss"
+  },
+  "owner": "pimmetjeoss",
+  "printer": "Pimmetjeoss",
+  "printer_name": "Pimmetjeoss",
+  "spec_path": "spec.yaml",
+  "spec_format": "openapi3",
+  "spec_checksum": "sha256:700dca9b1fb8b67ca664b37e2f552626338ed8fa7c341c246879df861403fd5e",
+  "run_id": "20260903-195511",
+  "description": "Accountancy-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation.",
+  "mcp_binary": "exact-online-accountancy-pp-mcp",
+  "mcp_tool_count": 26,
+  "mcp_ready": "full",
+  "api_version": "1.0.0",
+  "auth_type": "bearer_token",
+  "auth_preference": "oauth2",
+  "auth_env_vars": [
+    "EXACT_ONLINE_ACCOUNTANCY_OAUTH2"
+  ],
+  "verify": {
+    "mode": "mock",
+    "pass_rate": 100,
+    "passed": 48,
+    "total": 48,
+    "data_pipeline": true,
+    "verdict": "PASS"
+  },
+  "scorecard": {
+    "steinberger": {
+      "percentage": 82,
+      "grade": "A (1 of 25 dimensions unverified: live_api_verification)",
+      "total": 82
+    },
+    "unverified_dimensions": [
+      "live_api_verification"
+    ]
+  }
+}

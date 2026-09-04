@@ -1,0 +1,16 @@
+# agentcookie.toml: secrets-bus adoption manifest v2
+# See docs/spec-agentcookie-secrets-bus-v2-adoption.md
+schema_version = 2
+name = "exact-online-accountancy-pp-cli"
+display_name = "Exact Online Accountancy"
+description = "Accountancy-only Exact Online REST/OData API surface generated from the official Exact Online REST API documentation."
+project_kind = "cli"
+
+[secrets.file]
+path = "~/.config/exact-online-accountancy-pp-cli/config.toml"
+
+[sync]
+default = false
+
+[sync.keys]
+EXACT_ONLINE_ACCOUNTANCY_OAUTH2 = true
